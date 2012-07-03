@@ -2,7 +2,7 @@ module PreviousChanges
   module Extensions
     def self.included(base)
       base.class_eval do
-        after_validation_on_update :save_changes
+        after_validation :save_changes, :on => :update
       end
     end
     
